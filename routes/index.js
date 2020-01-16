@@ -6,6 +6,7 @@ const studentsRouter = require('./students');
 const campusesRouter = require('./campuses');
 
 // Mount our subrouters to assemble our apiRouter;
+
 router.use('/students', studentsRouter);
 router.use('/campuses', campusesRouter);
 

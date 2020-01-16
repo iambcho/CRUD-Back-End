@@ -128,5 +128,10 @@ router.get('/', function(req, res, next) {
     .catch(err => console.log(err))
 });
 
+// //fetch students
+// router.get('/students', function(req, res, next) {
+  
+// });
+
 // Export our router, so that it can be imported to construct our apiRouter;
 module.exports = router;

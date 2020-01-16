@@ -7,6 +7,7 @@
 
 // Module dependencies;
 const express = require('express');
+var cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -16,6 +17,7 @@ const compression = require('compression');
 // Utilities;
 const createLocalDatabase = require('./utilities/createLocalDatabase');
 const seedDatabase = require('./utilities/seedDatabase');
+
 
 // Our database instance;
 const db = require('./database');
@@ -50,6 +52,7 @@ const syncDatabase = async () => {
 // Instantiate our express application;
 const app = express();
 
+
 // A helper function to create our app with configurations and middleware;
 const configureApp = () => {
   app.use(helmet());
@@ -58,6 +61,7 @@ const configureApp = () => {
   app.use(express.urlencoded({ extended: false }));
   app.use(compression());
   app.use(cookieParser());
+  app.use(cors());
 
   // Mount our apiRouter;
   app.use('/api', apiRouter);
